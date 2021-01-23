@@ -40,7 +40,7 @@ const checkUser = (username, password) => {
     return users[username] || false;
 }
 
-app.get("/verify", (req,res,next)=>{
+app.get("/", (req,res,next)=>{
     const cookies = cookier.parse(req.headers.cookie);
     const user = tokenizr.verify(cookies.token);
     if (user) {
