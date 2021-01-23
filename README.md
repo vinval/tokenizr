@@ -48,9 +48,8 @@ app.get("/", (req,res,next)=>{
     }
 })
 
-app.get("/login", (req,res,next)=>{
-    const username = req.body.username;
-    const password = req.body.password;
+app.post("/login", (req,res,next)=>{
+    const { password, username } = req.body;
     const user = checkUser(username, password);
     if (user) {
         const token = tokenizr.sign(user, 60**2 * 24 * 7); // 1 token duration 1 week
