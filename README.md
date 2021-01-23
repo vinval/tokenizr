@@ -37,7 +37,12 @@ const users = {
 }
 
 const checkUser = (username, password) => {
-    return users[username] || false;
+    try {
+        if (users[username].password == password) return users[username];
+    } catch (error) {
+        return false;
+    }
+    return false;
 }
 
 app.get("/", (req,res,next)=>{
