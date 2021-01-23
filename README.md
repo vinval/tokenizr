@@ -24,8 +24,11 @@ tokenizr.verify(token); // back data based on token received before while still 
 ```javascript
 const express = require("express");
 const app = express();
+const bodyParser = require("body-parser");
 const tokenizr = require("@vinval/tokenizr");
 const cookier = require("@vinval/cookier");
+
+app.use(bodyParser.urlencoded({ extended: true }));
 
 const users = {
     user1: {
