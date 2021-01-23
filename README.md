@@ -45,6 +45,7 @@ app.get("/verify", (req,res,next)=>{
     const user = tokenizr.verify(cookies.token);
     if (user) {
         // do what you prefer with user object
+    }
 })
 
 app.get("/login", (req,res,next)=>{
