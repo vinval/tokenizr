@@ -17,6 +17,9 @@ const token = tokenizr.sign({userdata: {...}}, new Date(year,month,day,hour,minu
 
 // next, for would verify your token and callback your data
 tokenizr.verify(token); // back data based on token received before while still active
+
+// destroy it if it is no longer needed
+tokenizr.detroy(token); // back data based on token received before while still active
 ```
 
 ## Example
